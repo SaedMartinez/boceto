@@ -1,9 +1,3 @@
-<%-- 
-    Document   : Empleado
-    Created on : 17/09/2020, 02:18:40 PM
-    Author     : Saed
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

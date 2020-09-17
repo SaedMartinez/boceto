@@ -15,16 +15,16 @@
                         <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?accion=Producto" target="myframe">Producto</a>
+                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Producto" target="myframe">Producto</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?accion=Empleado" target="myframe">Empleado</a>
+                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Empleado" target="myframe">Empleado</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?accion=Clientes" target="myframe">Clientes</a>
+                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Clientes" target="myframe">Clientes</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?accion=NuevaVenta" target="myframe">Nueva Venta</a>
+                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=NuevaVenta" target="myframe">Nueva Venta</a>
                     </li>
                 </ul>
             </div>
