@@ -24,7 +24,7 @@
                         <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Clientes" target="myframe">Clientes</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=RegistrarVenta" target="myframe">Nueva Venta</a>
+                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=RegistrarVenta&accion=default" target="myframe">Nueva Venta</a>
                     </li>
                 </ul>
             </div>

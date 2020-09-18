@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,7 +12,7 @@
         <div class="d-flex">
             <div class="col-sm-4"> 
                 <div class="card">
-                    <form action="Controlador" method="post">
+                    <form action="Controlador?menu=RegistrarVenta" method="post">
                         <div class="card-body"> 
                             <div class="form-group">
                                 <label>Datos de Cliente </label>
@@ -30,26 +31,27 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="codigoproducto" class="form-control" placeholder="Codigo">
-                                    <input type="submit" name="accion" value="Buscar" class=" btn btn-outline-info">
+                                    <input type="text" name="codigoproducto" value="${producto.getId()}" class="form-control" placeholder="Codigo">
+                                    <button type="submit" name="accion" value="BuscarProducto" class=" btn btn-outline-info">Buscar</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type=" text" name="nombrescliente" class="form-control" placeholder="Datos producto">
+                                    <input type=" text" name="nombreproducto" value="${producto.getNom()}" class="form-control" placeholder="Datos producto">
                                 </div>
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type=" text" name="precio" class="form-control" placeholder="Precio">
+                                    <input type=" text" name="precio" value="${producto.getPrecio()}" class="form-control" placeholder="Precio">
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="number" name="cant" class="form-control" >
+                                    <input type="number" name="cant" value="1" class="form-control" >
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type=" text" name="stock" class="form-control" placeholder="Stock">
+                                    <input type=" text" name="stock" value="${producto.getStock()}" class="form-control" placeholder="Stock">
                                 </div>
                             </div>
+                            <!--BOTON AGREGAR  -->
                             <div class="form-group">
-                                <input type="submit" name="accion" value="Agregar" class="btn btn-outline-info">
+                                <button type="submit" name="accion" value="AgregarProducto" class="btn btn-outline-info">Agregar Producto</button>
                             </div>
                         </div>
                     </form>
@@ -76,22 +78,30 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
+                                <c:forEach var="list" items="${lista}">
+                                    <tr>
+                                        <td>${list.getItem()}</td>
+                                        <td>${list.getIdproducto()}</td>
+                                        <td>${list.getDescripcionP()}</td>
+                                        <td>${list.getPrecio()}</td>
+                                        <td>${list.getCantidad()}</td>
+                                        <td>${list.getSubtotal()}</td>
+                                        <td class="d-flex">
+                                            <a href="#" class="btn btn-warning">Editar</a> 
+                                            <a href="#" class="btn btn-danger" style="margin-left: 10px">X</a> 
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>
-                    <div class="card-footer">
-                        <div>
+                    <div class="card-footer d-flex">
+                        <div class="col-sm-8">
                             <input type=" submit" name="accion" value="Generar Venta" class="btn btn-outline-success">
                             <input type=" submit" name="accion" value="Cancelar" class="btn btn-outline-danger">
+                        </div>
+                        <div class="col-sm-3 ml-auto">
+                            <input type=" text" name="txtTotal" value="${total}" class="form-control">
                         </div>
                     </div>
                 </div>
