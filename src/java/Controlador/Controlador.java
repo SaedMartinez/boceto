@@ -3,6 +3,7 @@ package Controlador;
 import Modelo.Producto;
 import Modelo.ProductoDAO;
 import Modelo.Venta;
+import Modelo.VentaDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -27,6 +28,10 @@ public class Controlador extends HttpServlet {
     int cant;
     double subtotal;
     double total;
+    String numeroserie;
+    VentaDAO vdao=new VentaDAO();
+    VentaDAO vdao2=new VentaDAO();
+    
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -51,8 +56,9 @@ public class Controlador extends HttpServlet {
                     p=pdao.listarId(id);
                     request.setAttribute("producto", p);
                     request.setAttribute("lista", lista);
+                    request.setAttribute("total", total);
                     break;
-                case "AgregarProducto":
+                case "AgregarProducto":  
                     total=0.0;
                     item=item+1;
                     cod=p.getId();
@@ -63,7 +69,7 @@ public class Controlador extends HttpServlet {
                     
                     v=new Venta();
                     v.setItem(item);
-                    v.setId(cod);
+                    v.setIdproducto(cod);
                     v.setDescripcionP(descripcion);
                     v.setPrecio(precio);
                     v.setCantidad(cant);
@@ -75,7 +81,48 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("total", total);
                     request.setAttribute("lista", lista);
                     break;
+                case "GenerarVenta":
+                    //Guardar Venta --------------------------------(FALTA AGREGAR ID CLIENTE)
+                    v.setIdempleado(2);
+                    v.setNumserie(numeroserie);
+                    v.setFecha("2019-09-09");
+                    v.setMonto(total);
+                    v.setEstado("1");
+                    vdao.guardarVenta(v);
+                    
+                    //Guardar Detalle venta --------------------------------
+                    int idv=Integer.parseInt(vdao.IdVentas()); 
+                    for (int i = 0; i < lista.size(); i++) {
+                        v=new Venta();
+                        v.setId(idv);
+                        v.setIdproducto(lista.get(i).getIdproducto());
+                        v.setCantidad(lista.get(i).getCantidad());
+                        v.setPrecio(lista.get(i).getPrecio());
+                        vdao.guardarDetalleVentas(v);
+                    }
+                    
+                    //Actualizar Stock --------------------------------
+                    for (int i = 0; i < lista.size(); i++) {
+                        Producto pr=new Producto();
+                        int cantidad=lista.get(i).getCantidad();
+                        int idproducto=lista.get(i).getIdproducto();
+                        ProductoDAO aO=new ProductoDAO();
+                        pr=aO.buscar(idproducto);
+                        int sac=pr.getStock()-cantidad;
+                        aO.actualizarstock(idproducto, sac);
+                    }
+                    break;
                 default:
+                     numeroserie=vdao.GenerarSerie();
+                     if(numeroserie==null){
+                        numeroserie="00001";
+                        request.setAttribute("nserie", numeroserie);
+                     }else{
+                        int incrementar=Integer.parseInt(numeroserie);
+                        numeroserie=vdao2.NumeroSerie(incrementar);
+                        request.setAttribute("nserie", numeroserie);
+                     }
+                     
                     request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
             }
             request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
