@@ -1,9 +1,3 @@
-<%-- 
-    Document   : RegistrarVenta
-    Created on : 17/09/2020, 02:19:00 PM
-    Author     : Saed
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,26 +11,90 @@
         <div class="d-flex">
             <div class="col-sm-4"> 
                 <div class="card">
-                    <div class="card-body"> 
-                        <div class="form-group">
-                            <label>Datos de Cliente </label>
-                        </div>
-                        <div class="form-group d-flex">
-                            <div class="col-sm-6 d-flex">
-                                <input type="text" name="codigocliente" class="form-control" placeholder="Codigo">
-                                <input type="submit" name="accion" value="Buscar" class="btn-outline-info">
+                    <form action="Controlador" method="post">
+                        <div class="card-body"> 
+                            <div class="form-group">
+                                <label>Datos de Cliente </label>
                             </div>
-                            <div class="col-sm-6">
-                                <input type=" text" name="nombrescliente" class="form-control">
+                            <div class="form-group d-flex">
+                                <div class="col-sm-6 d-flex">
+                                    <input type="text" name="codigocliente" class="form-control" placeholder="Codigo">
+                                    <input type="submit" name="accion" value="Buscar" class=" btn btn-outline-info">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type=" text" name="nombrescliente" class="form-control" placeholder="Datos cliente">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Datos de Producto </label>
+                            </div>
+                            <div class="form-group d-flex">
+                                <div class="col-sm-6 d-flex">
+                                    <input type="text" name="codigoproducto" class="form-control" placeholder="Codigo">
+                                    <input type="submit" name="accion" value="Buscar" class=" btn btn-outline-info">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type=" text" name="nombrescliente" class="form-control" placeholder="Datos producto">
+                                </div>
+                            </div>
+                            <div class="form-group d-flex">
+                                <div class="col-sm-6 d-flex">
+                                    <input type=" text" name="precio" class="form-control" placeholder="Precio">
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="number" name="cant" class="form-control" >
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type=" text" name="stock" class="form-control" placeholder="Stock">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="accion" value="Agregar" class="btn btn-outline-info">
                             </div>
                         </div>
-                        <div class="form-group"></div>
-                        <div class="form-group"></div>
-                        <div class="form-group"></div>
-                    </div>
+                    </form>
                 </div>
             </div>
-            <div>
+            <div class="col-sm-7">
+                <div class="card"> 
+                    <div class="card-body"> 
+                        <div class="d-flex col-sm-5 ml-auto">
+                            <label>Serie</label>
+                            <input type=" text" name="NroSerie" class="form-control">
+                        </div>
+                        <br>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Nro</th>
+                                    <th>Codigo</th>
+                                    <th>Descripcion</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>SubTotal</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer">
+                        <div>
+                            <input type=" submit" name="accion" value="Generar Venta" class="btn btn-outline-success">
+                            <input type=" submit" name="accion" value="Cancelar" class="btn btn-outline-danger">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

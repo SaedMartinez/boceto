@@ -17,13 +17,13 @@ public class Controlador extends HttpServlet {
             request.getRequestDispatcher("Principal.jsp").forward(request, response);
         }
         if (menu.equals("Empleado")) {
-            request.getRequestDispatcher("Empleados.jsp").forward(request, response);
+            request.getRequestDispatcher("Empleado.jsp").forward(request, response);
         }
         if (menu.equals("Clientes")) {
             request.getRequestDispatcher("Clientes.jsp").forward(request, response);
         }
-        if (menu.equals("Productos")) {
-            request.getRequestDispatcher("Productos.jsp").forward(request, response);
+        if (menu.equals("Producto")) {
+            request.getRequestDispatcher("Producto.jsp").forward(request, response);
         }
         if (menu.equals("RegistrarVenta")) {
             request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
