@@ -15,16 +15,16 @@
                         <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?accion=Producto" target="myframe">Producto</a>
+                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Producto" target="myframe">Producto</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?accion=Empleado" target="myframe">Empleado</a>
+                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Empleado&accion=listar" target="myframe">Empleado</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?accion=Clientes" target="myframe">Clientes</a>
+                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Cliente" target="myframe">Clientes</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?accion=NuevaVenta" target="myframe">Nueva Venta</a>
+                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=NuevaVenta" target="myframe">Nueva Venta</a>
                     </li>
                 </ul>
             </div>
@@ -46,7 +46,7 @@
             </div>  
         </nav>
         <div class="m-4" style="height: 550px;">
-            <iframe name="myframe" style="height: 100%; width: 100%"></iframe>
+            <iframe name="myframe" style="height: 100%; width: 100%; border: none"></iframe>
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
