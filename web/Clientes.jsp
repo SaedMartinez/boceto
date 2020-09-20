@@ -12,6 +12,10 @@
         <title>JSP Page</title>
     </head>
     <body>
+<<<<<<< HEAD
         <h1>Hello clientes!</h1>
+=======
+        <h1>Hello World! CLIENTES</h1>
+>>>>>>> 3b607675c989896605d3803038b11512963dff0d
     </body>
 </html>

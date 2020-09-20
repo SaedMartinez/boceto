@@ -18,6 +18,7 @@
                         <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Producto" target="myframe">Producto</a>
                     </li>
                     <li class="nav-item">
+<<<<<<< HEAD
                         <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Empleado&accion=listar" target="myframe">Empleado</a>
                     </li>
                     <li class="nav-item">
@@ -25,6 +26,15 @@
                     </li>
                     <li class="nav-item">
                         <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=NuevaVenta" target="myframe">Nueva Venta</a>
+=======
+                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Empleado" target="myframe">Empleado</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=Clientes" target="myframe">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="margin-left: 10px; border:none" class="btn btn-outline-light" href="Controlador?menu=RegistrarVenta&accion=default" target="myframe">Nueva Venta</a>
+>>>>>>> 3b607675c989896605d3803038b11512963dff0d
                     </li>
                 </ul>
             </div>
