@@ -59,7 +59,7 @@ public class EmpleadoDAO {
     }
 
     public int agregar(Empleado em) {
-        String sql = "insert into empleado (Dni, Nombres, Telefono, Estado, User)values(?,?,?,?)";
+        String sql = "insert into empleado (Dni, Nombres, Telefono, Estado, User)values(?,?,?,?,?)";
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);

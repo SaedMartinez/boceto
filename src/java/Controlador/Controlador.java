@@ -52,9 +52,9 @@ public class Controlador extends HttpServlet {
                 case "Agregar":
                     String dni=request.getParameter("txtDni");
                     String nom=request.getParameter("txtNombres");
-                    String tel=request.getParameter("txtTel");
+                    String tel=request.getParameter("txtTelefono");
                     String est=request.getParameter("txtEstado");
-                    String user=request.getParameter("txtUser");
+                    String user=request.getParameter("txtUsuario");
                     em.setDni(dni);
                     em.setNom(nom);
                     em.setTel(tel);
