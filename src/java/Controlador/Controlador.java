@@ -74,6 +74,7 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("producto", p);
                     request.setAttribute("lista", lista);
                     request.setAttribute("total", total);
+                    request.setAttribute("nserie", numeroserie);
                     break;
                 case "AgregarProducto":
                     total = 0.0;
@@ -95,11 +96,12 @@ public class Controlador extends HttpServlet {
                     for (int i = 0; i < lista.size(); i++) {
                         total = total + lista.get(i).getSubtotal();
                     }
+                    request.setAttribute("nserie", numeroserie);
                     request.setAttribute("total", total);
                     request.setAttribute("lista", lista);
                     break;
                 case "GenerarVenta":
-                    //Guardar Venta --------------------------------(FALTA AGREGAR ID CLIENTE)
+                    v.setIdcliente(18);//Guardar Venta --------------------------------(FALTA AGREGAR ID CLIENTE)
                     v.setIdempleado(2);
                     v.setNumserie(numeroserie);
                     v.setFecha("2019-09-09");
@@ -130,6 +132,8 @@ public class Controlador extends HttpServlet {
                     }
                     break;
                 default:
+                    lista = new ArrayList<>();
+                    item=0;
                     numeroserie = vdao.GenerarSerie();
                     if (numeroserie == null) {
                         numeroserie = "00001";

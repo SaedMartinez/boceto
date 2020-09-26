@@ -55,7 +55,7 @@ public class VentaDAO {
     
     public String IdVentas(){
         String idventas="";
-        String sql="select max(IdVentas)";
+        String sql="select max(IdVentas) from ventas";
         try {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
