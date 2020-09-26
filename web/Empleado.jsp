@@ -16,25 +16,26 @@
                     <form action="Controlador?menu=Empleado" method="POST">
                         <div class="form-group">
                             <label>Dni</label>
-                            <input type="text" name="txtDni" class="form-control">  
+                            <input type="text" value="${em.getDni()}" name="txtDni" class="form-control">  
                         </div> 
                         <div class="form-group">
                             <label>Nombres</label>
-                            <input type="text" name="txtNombres" class="form-control">
+                            <input type="text" value="${em.getNom()}" name="txtNombres" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Telefono</label>
-                            <input type="text" name="txtTelefono" class="form-control">
+                            <input type="text" value="${em.getTel()}" name="txtTelefono" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Estado</label>
-                            <input type="text" name="txtEstado" class="form-control">
+                            <input type="text" value="${em.getEstado()}" name="txtEstado" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Usuario</label>
-                            <input type="text" name="txtUsuario" class="form-control">
+                            <input type="text" value="${em.getUser()}" name="txtUsuario" class="form-control">
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
+                        <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     </form>
                 </div>
             </div>
@@ -53,14 +54,15 @@
                     <tbody>
                         <c:forEach var="em" items="${empleados}">
                             <tr>
+                                <td>${em.getId()}</td>
                                 <td>${em.getDni()}</td>
                                 <td>${em.getNom()}</td>
                                 <td>${em.getTel()}</td>
                                 <td>${em.getEstado()}</td>
                                 <td>${em.getUser()}</td>
                                 <td>
-                                    <a>Editar</a>
-                                    <a>delete</a>
+                                    <a class="btn btn-warning" href="Controlador?menu=Empleado&accion=Editar&id=${em.getId()}">Editar</a>
+                                    <a class="btn btn-danger" href="Controlador?menu=Empleado&accion=Delete&id=${em.getId()}">delete</a>
                                 </td>
                             </tr>
                         </c:forEach>

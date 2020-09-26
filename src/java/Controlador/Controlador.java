@@ -22,7 +22,10 @@ public class Controlador extends HttpServlet {
     ProductoDAO pdao = new ProductoDAO();
     Empleado em = new Empleado();
     EmpleadoDAO edao = new EmpleadoDAO();
-
+    int ide;
+    
+    
+    
     Venta v = new Venta();
     List<Venta> lista = new ArrayList<>();
     int item;
@@ -64,6 +67,26 @@ public class Controlador extends HttpServlet {
                     request.getRequestDispatcher("Controlador?menu=Empleado&accion=listar").forward(request, response);
                     break;
                 case "Editar":
+                     ide=Integer.parseInt(request.getParameter("id"));
+                     Empleado e=edao.ListarId(ide);
+                     request.setAttribute("empleado", e);
+                     request.getRequestDispatcher("Controlador?menu=Empleado&accion=listar").forward(request, response);
+                    break;
+                case "Actualizar":
+                    
+                    String dni1=request.getParameter("txtDni");
+                    String nom1=request.getParameter("txtNombres");
+                    String tel1=request.getParameter("txtTelefono");
+                    String est1=request.getParameter("txtEstado");
+                    String user1=request.getParameter("txtUsuario");
+                    em.setDni(dni1);
+                    em.setNom(nom1);
+                    em.setTel(tel1);
+                    em.setEstado(est1);
+                    em.setUser(user1);
+                    em.setId(ide);
+                    edao.actualizar(em);
+                     request.getRequestDispatcher("Controlador?menu=Empleado&accion=listar").forward(request, response);
                     break;
                 case "Delete":
                     break;
