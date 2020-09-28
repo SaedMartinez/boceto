@@ -16,23 +16,23 @@
                     <form action="Controlador?menu=Empleado" method="POST">
                         <div class="form-group">
                             <label>Dni</label>
-                            <input type="text" value="${em.getDni()}" name="txtDni" class="form-control">  
+                            <input type="text" value="${empleado.getDni()}" name="txtDni" class="form-control">  
                         </div> 
                         <div class="form-group">
                             <label>Nombres</label>
-                            <input type="text" value="${em.getNom()}" name="txtNombres" class="form-control">
+                            <input type="text" value="${empleado.getNom()}" name="txtNombres" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Telefono</label>
-                            <input type="text" value="${em.getTel()}" name="txtTelefono" class="form-control">
+                            <input type="text" value="${empleado.getTel()}" name="txtTelefono" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Estado</label>
-                            <input type="text" value="${em.getEstado()}" name="txtEstado" class="form-control">
+                            <input type="text" value="${empleado.getEstado()}" name="txtEstado" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Usuario</label>
-                            <input type="text" value="${em.getUser()}" name="txtUsuario" class="form-control">
+                            <input type="text" value="${empleado.getUser()}" name="txtUsuario" class="form-control">
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-success">

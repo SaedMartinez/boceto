@@ -77,7 +77,7 @@ public class EmpleadoDAO {
 
     public Empleado ListarId(int id) {
         Empleado emp = new Empleado();
-        String sql = "select from * empleado where IdEmpleado="+id;
+        String sql = "select * from empleado where IdEmpleado="+id;
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
