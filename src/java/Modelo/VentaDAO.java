@@ -17,8 +17,8 @@ public class VentaDAO {
     int r;
      
      // METODOS SERIE ---------------------------
-    public String NumeroSerie(int dato){
-        this.dato=dato+1;
+    public String NumeroSerie(int inc){
+        this.dato=inc+1;
         if((this.dato>=10000)&(this.dato<=100000)){
             cnumero=""+dato;
         }
@@ -53,15 +53,15 @@ public class VentaDAO {
     
     //FIN METODOS SERIE ---------------------------
     
-    public String IdVentas(){
-        String idventas="";
+    public int IdVentas(){
+        int idventas=0;
         String sql="select max(IdVentas) from ventas";
         try {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
             rs=ps.executeQuery();
             while (rs.next()){
-               idventas=rs.getString(1);
+               idventas=rs.getInt(1);
             }
         } catch (Exception e) {
         }
@@ -79,10 +79,7 @@ public class VentaDAO {
             ps.setString(4, ve.getFecha());
             ps.setDouble(5, ve.getPrecio());
             ps.setString(6, ve.getEstado());
-            rs=ps.executeQuery();
-            while (rs.next()){
-               
-            }
+            ps.executeUpdate();
         } catch (Exception e) {
         }
         return r;

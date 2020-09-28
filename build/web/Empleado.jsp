@@ -46,7 +46,7 @@
                             <th>DNI</th>
                             <th>NOMBRES</th>
                             <th>TELEFONO</th>
-                            <th>TELEFONO</th>
+                            <th>ESTADO</th>
                             <th>USER</th>
                             <th>ACCIONES</th>
                         </tr>
@@ -54,7 +54,6 @@
                     <tbody>
                         <c:forEach var="em" items="${empleados}">
                             <tr>
-                                <td>${em.getId()}</td>
                                 <td>${em.getDni()}</td>
                                 <td>${em.getNom()}</td>
                                 <td>${em.getTel()}</td>
