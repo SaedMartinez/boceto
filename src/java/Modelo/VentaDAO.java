@@ -1,4 +1,4 @@
-package Modelo;
+ package Modelo;
 
 import config.Conexion;
 import java.sql.Connection;
@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 public class VentaDAO {
     Conexion cn=new Conexion();
     Connection con;
-    PreparedStatement ps;
+    PreparedStatement ps; 
     ResultSet rs;  
     int dato;
     String cnumero;
@@ -53,15 +53,15 @@ public class VentaDAO {
     
     //FIN METODOS SERIE ---------------------------
     
-    public int IdVentas(){
-        int idventas=0;
+    public String IdVentas(){
+        String idventas="";
         String sql="select max(IdVentas) from ventas";
         try {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
             rs=ps.executeQuery();
             while (rs.next()){
-               idventas=rs.getInt(1);
+               idventas=rs.getString(1);
             }
         } catch (Exception e) {
         }
@@ -90,7 +90,7 @@ public class VentaDAO {
         try {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
-            ps.setInt(1, venta.getIdcliente());
+            ps.setInt(1, venta.getId());
             ps.setInt(2, venta.getIdproducto());
             ps.setInt(3, venta.getCantidad());
             ps.setDouble(4, venta.getPrecio());

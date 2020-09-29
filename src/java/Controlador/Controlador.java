@@ -152,7 +152,7 @@ public class Controlador extends HttpServlet {
                     vdao.guardarVenta(v);
 
                     //Guardar Detalle venta --------------------------------
-                    int idv =vdao.IdVentas();
+                    int idv = Integer.parseInt(vdao.IdVentas());
                     for (int i = 0; i < lista.size(); i++) {
                         v = new Venta();
                         v.setId(idv);
@@ -174,7 +174,7 @@ public class Controlador extends HttpServlet {
                     }
                     break;
                 default:
-                    lista = new ArrayList<>();
+                    
                     item=0;
                     numeroserie = vdao.GenerarSerie();
                     if (numeroserie == null) {
