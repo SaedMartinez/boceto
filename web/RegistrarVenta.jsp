@@ -6,10 +6,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <title>VENTA</title>
+        <style>
+            @media print{
+                .parte01, .btn, .ae{
+                    display: none;
+                }  
+            }
+        </style>
     </head>
     <body>
         <div class="d-flex">
-            <div class="col-sm-4"> 
+            <div class="col-sm-4 parte01"> 
                 <div class="card">
                     <form action="Controlador?menu=RegistrarVenta" method="post">
                         <div class="card-body"> 
@@ -73,7 +80,7 @@
                                     <th>Precio</th>
                                     <th>Cantidad</th>
                                     <th>SubTotal</th>
-                                    <th>Acciones</th>
+                                    <th class="ae" >Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -96,7 +103,7 @@
                     </div>
                     <div class="card-footer d-flex">
                         <div class="col-sm-8">
-                            <a href="Controlador?menu=RegistrarVenta&accion=GenerarVenta" class="btn btn-outline-success">Generar Venta</a>
+                            <a href="Controlador?menu=RegistrarVenta&accion=GenerarVenta"  onclick="print()"class="btn btn-outline-success">Generar Venta</a>
                             <input type=" submit" name="accion" value="Cancelar" class="btn btn-outline-danger">
                         </div>
                         <div class="col-sm-3 ml-auto">

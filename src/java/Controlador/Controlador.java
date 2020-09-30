@@ -169,12 +169,14 @@ public class Controlador extends HttpServlet {
                         int idproducto = lista.get(i).getIdproducto();
                         ProductoDAO aO = new ProductoDAO();
                         pr = aO.buscar(idproducto);
-                        int sac = pr.getStock() - cantidad;
+                        int sac = pr.getStock()-cantidad;
                         aO.actualizarstock(idproducto, sac);
                     }
+                    
+                    lista = new ArrayList<>();
                     break;
                 default:
-                    
+                    lista = new ArrayList<>();
                     item=0;
                     numeroserie = vdao.GenerarSerie();
                     if (numeroserie == null) {

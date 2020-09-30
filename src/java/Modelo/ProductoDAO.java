@@ -40,7 +40,7 @@ public class ProductoDAO {
             ps=con.prepareStatement(sql);
             ps.setInt(1, stock);
             ps.setInt(2, id);
-            rs=ps.executeQuery();
+            ps.executeUpdate();
         } catch (Exception e) {
         }
         return r;
